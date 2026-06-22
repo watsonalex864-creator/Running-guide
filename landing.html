@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Keys to Running Stronger, Smarter & Injury-Free</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1F5FAE;
+    --blue-dark:#15406F;
+    --cream:#F7F4EC;
+    --charcoal:#1A1A1A;
+    --orange:#E8542E;
+    --line:rgba(26,26,26,0.12);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Work Sans',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .stripes{
+    height:10px;
+    width:100%;
+    background:repeating-linear-gradient(
+      -35deg,
+      var(--blue) 0 22px,
+      var(--orange) 22px 26px,
+      var(--blue) 26px 48px,
+      var(--cream) 48px 52px
+    );
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+  header.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 0;
+    max-width:760px;
+    margin:0 auto;
+    padding-left:28px;
+    padding-right:28px;
+  }
+  .brand{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    font-size:15px;
+    color:var(--blue-dark);
+  }
+  .brand span{color:var(--orange);}
+  .handle{
+    font-size:14px;
+    color:#6b6b63;
+  }
+
+  .hero{padding:56px 0 36px;}
+  .eyebrow{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:13px;
+    color:var(--orange);
+    margin:0 0 14px;
+  }
+  h1{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:clamp(34px,6vw,54px);
+    line-height:1.04;
+    margin:0 0 18px;
+    color:var(--charcoal);
+  }
+  h1 em{
+    font-style:normal;
+    color:var(--blue);
+  }
+  .sub{
+    font-size:18px;
+    color:#3d3d38;
+    max-width:520px;
+    margin:0 0 30px;
+  }
+  .cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--charcoal);
+    color:var(--cream);
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    font-size:15px;
+    padding:15px 26px;
+    border:none;
+    border-radius:3px;
+    cursor:pointer;
+    transition:background 0.15s ease, transform 0.1s ease;
+  }
+  .cta-btn:hover{background:var(--blue-dark); transform:translateY(-1px);}
+  .cta-btn:active{transform:translateY(0);}
+
+  .splits{
+    padding:34px 0 44px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .splits h2{
+    font-family:'Oswald',sans-serif;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    color:#6b6b63;
+    margin:0 0 20px;
+  }
+  .split-row{
+    display:flex;
+    align-items:baseline;
+    gap:18px;
+    padding:14px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .split-row:last-child{border-bottom:none;}
+  .split-num{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:22px;
+    color:var(--orange);
+    min-width:34px;
+  }
+  .split-text strong{display:block; font-size:16.5px; margin-bottom:2px;}
+  .split-text span{font-size:14.5px; color:#5b5b54;}
+
+  .signup{
+    padding:48px 0 18px;
+    text-align:center;
+  }
+  .signup h2{
+    font-family:'Oswald',sans-serif;
+    font-size:clamp(24px,4vw,30px);
+    margin:0 0 10px;
+  }
+  .signup p{
+    color:#4a4a44;
+    max-width:440px;
+    margin:0 auto 28px;
+    font-size:16px;
+  }
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:360px;
+    margin:0 auto;
+  }
+  input{
+    width:100%;
+    padding:13px 14px;
+    border:1.5px solid var(--line);
+    border-radius:3px;
+    font-family:'Work Sans',sans-serif;
+    font-size:15px;
+    background:#fff;
+  }
+  input:focus{outline:2px solid var(--blue); outline-offset:1px; border-color:var(--blue);}
+  .fineprint{font-size:12.5px; color:#8a8a82; margin-top:10px;}
+
+  .thanks{
+    display:none;
+    max-width:420px;
+    margin:0 auto;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:6px;
+    padding:26px 24px;
+    text-align:center;
+  }
+  .thanks.show{display:block;}
+  .thanks h3{font-family:'Oswald',sans-serif; margin:0 0 8px; font-size:19px;}
+  .thanks p{font-size:14.5px; color:#4a4a44; margin:0 0 16px;}
+  .download-btn{
+    display:inline-block;
+    background:var(--blue);
+    color:#fff;
+    text-decoration:none;
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    font-size:14px;
+    padding:12px 22px;
+    border-radius:3px;
+  }
+  .download-btn:hover{background:var(--blue-dark);}
+
+  footer{
+    padding:40px 0 50px;
+    text-align:center;
+  }
+  footer p{
+    font-size:13.5px;
+    color:#8a8a82;
+    margin:0;
+  }
+  footer a{color:var(--blue-dark); text-decoration:none; font-weight:500;}
+
+  @media (max-width:480px){
+    .hero{padding-top:40px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="stripes"></div>
+
+<header class="top">
+  <div class="brand">ALEX WATSON <span>RUN</span></div>
+  <div class="handle">@alexwats.on</div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Free guide for runners</p>
+    <h1>Stop guessing.<br>Start running <em>smarter.</em></h1>
+    <p class="sub">A free, no-fluff guide from Alex Watson, Personal Trainer — five things that actually make you a stronger, faster, more injury-resistant runner.</p>
+    <button class="cta-btn" onclick="document.getElementById('signup-form').scrollIntoView({behavior:'smooth'})">Get the free guide →</button>
+  </section>
+
+  <section class="splits">
+    <h2>What's inside</h2>
+    <div class="split-row">
+      <div class="split-num">01</div>
+      <div class="split-text"><strong>Build your aerobic base first</strong><span>Why slowing down most runs is how you get faster</span></div>
+    </div>
+    <div class="split-row">
+      <div class="split-num">02</div>
+      <div class="split-text"><strong>Fix your form before you add speed</strong><span>Four simple cues to clean up your stride</span></div>
+    </div>
+    <div class="split-row">
+      <div class="split-num">03</div>
+      <div class="split-text"><strong>Strength train to run better</strong><span>The two short sessions a week that prevent injury</span></div>
+    </div>
+    <div class="split-row">
+      <div class="split-num">04</div>
+      <div class="split-text"><strong>Avoid the 3 mistakes behind most injuries</strong><span>What causes the niggles that derail training</span></div>
+    </div>
+    <div class="split-row">
+      <div class="split-num">05</div>
+      <div class="split-text"><strong>A simple weekly structure</strong><span>A ready-to-use week you can start right now</span></div>
+    </div>
+  </section>
+
+  <section class="signup" id="signup-form">
+    <h2>Get your free copy</h2>
+    <p>Drop your name and email below — your guide is one click away.</p>
+
+    <form id="leadForm">
+      <input type="text" id="name" placeholder="First name" required>
+      <input type="email" id="email" placeholder="Email address" required>
+      <button type="submit" class="cta-btn">Send me the guide</button>
+    </form>
+    <p class="fineprint">No spam — just the guide, and occasional running tips.</p>
+
+    <div class="thanks" id="thanks">
+      <h3>You're in! 🎉</h3>
+      <p>Your guide is ready to download below.</p>
+      <a class="download-btn" id="downloadLink" href="YOUR_GUIDE_PDF_LINK_HERE" target="_blank" rel="noopener">Download your guide</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Alex Watson · <a href="mailto:alexwatson444@gmail.com">alexwatson444@gmail.com</a> · @alexwats.on</p>
+</footer>
+
+<script>
+  const form = document.getElementById('leadForm');
+  const thanks = document.getElementById('thanks');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    // Notify you by opening a pre-filled email in a new tab.
+    // Replace your.email@example.com with your real inbox.
+    const subject = encodeURIComponent('New guide request: ' + name);
+    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email);
+    window.open('mailto:alexwatson444@gmail.com?subject=' + subject + '&body=' + body, '_blank');
+
+    form.style.display = 'none';
+    thanks.classList.add('show');
+  });
+</script>
+
+</body>
+</html>
